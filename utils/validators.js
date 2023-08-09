@@ -22,12 +22,12 @@ const validatePassword = (password) => {
 };
 
 /*
-  //* For manually testing the validation functions
-  console.log(
-    validateName("shamim01"),
-    validateEmail("sm47@gmail.com"),
-    validatePassword("HelloWorld@6")
-  );
-  */
+//* For manually testing the validation functions
+console.log(
+  validateName("shamim01"),
+  validateEmail("sm47@gmail.com"),
+  validatePassword("HelloWorld@6")
+);
+*/
 
 module.exports = { validateName, validateEmail, validatePassword };

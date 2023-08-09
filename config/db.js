@@ -1,19 +1,19 @@
 const { Sequelize } = require("sequelize");
 
+//* Instantiates sequelize with the name of database, username, password and configuration options
 const createDB = new Sequelize("test-db", "user", "pass", {
   dialect: "sqlite",
   host: "./config/db.sqlite",
 });
 
-const connectDB = () => {
+//* Connects the ExpressJS app to DB
+const connectToDB = () => {
   createDB
     .sync()
-    .then(() => {
-      console.log("database is connected");
+    .then((res) => {
+      console.log("Successfully connected to database");
     })
-    .catch((e) => {
-      console.log("db connection failed", e);
-    });
+    .catch((err) => console.log("Cannot connect to database due to:", err));
 };
 
-module.exports = { createDB, connectDB };
+module.exports = { createDB, connectToDB };
